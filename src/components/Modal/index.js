@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import ReactDOM from 'react-dom'
 import { TextField, Button } from '@material-ui/core'
 import { Overlay, Popup, InputsContainer } from './styles'
@@ -11,6 +11,19 @@ import { Context } from '../../context'
 
 export const Modal = () => {
   const { isModalVisible, closeModal } = useContext(Context)
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('')
+
+  const handleSubmit = event => {
+    //event.preventDefault()
+
+    console.table({
+      name,
+      email,
+      message
+    })
+  }
 
   if (isModalVisible)
     return ReactDOM.createPortal(
@@ -29,28 +42,37 @@ export const Modal = () => {
               value='¿Tienes preguntas o simplemente quieres saludar? Envíame un mensaje.'
               variant='body'
             />
-            <form>
+            <form action='contact.php' onSubmit={handleSubmit}>
               <InputsContainer>
                 <TextField
                   required
+                  name='name'
                   label='Nombre'
                   variant='outlined'
                   color='secondary'
+                  value={name}
+                  onChange={e => setName(e.target.value)}
                 />
                 <TextField
                   required
+                  name='email'
                   type='email'
                   label='Correo'
                   variant='outlined'
                   color='secondary'
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
                 />
                 <TextField
                   required
+                  name='message'
                   label='Mensaje'
                   variant='outlined'
                   multiline={true}
                   rowsMax={3}
                   color='secondary'
+                  value={message}
+                  onChange={e => setMessage(e.target.value)}
                 />
               </InputsContainer>
               <Button
