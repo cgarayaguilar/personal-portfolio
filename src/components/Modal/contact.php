@@ -11,4 +11,3 @@ $mailheader .= 'Content-type: text/html; charset=utf-8 \r\n';
 
 mail($to, $subject, $message, $mailheader) or die('error al enviar el mensaje');
 
-header('Location: https://personal-portfolio-gray.vercel.app/');
