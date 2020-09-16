@@ -43,7 +43,7 @@ export const Modal = () => {
               variant='body'
             />
             <form
-              action='mailto:cgaray.aguilar97@gmail.com'
+              action={`mailto:cgaray.aguilar97@gmail.com?subject=Mensaje%20enviado%20desde%20mi%20web%20personal&body=${message}`}
               onSubmit={handleSubmit}
               method='post'
               enctype='text/plain'
