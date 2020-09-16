@@ -1,0 +1,37 @@
+.section-grid {
+  margin: 88px 0;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.title-container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1240px;
+}
+
+.grid {
+  transition: opacity 0.5s linear 1s;
+  opacity: 0;
+  position: relative;
+
+  width: 90%;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.grid.projects-loaded {
+  opacity: 1;
+}
+
+.links-container a {
+  margin-right: 16px;
+  font-style: normal;
+  font-family: 'Public Sans', sans-serif;
+  font-weight: normal;
+  line-height: 25px;
+  letter-spacing: -0.234375px;
+  text-align: left;
+  color: #9597a5;
+}
