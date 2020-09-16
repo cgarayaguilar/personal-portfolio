@@ -42,7 +42,7 @@ export const Modal = () => {
               value='¿Tienes preguntas o simplemente quieres saludar? Envíame un mensaje.'
               variant='body'
             />
-            <form action='contact.php' onSubmit={handleSubmit}>
+            <form action='contact.php' onSubmit={handleSubmit} method='POST'>
               <InputsContainer>
                 <TextField
                   required
