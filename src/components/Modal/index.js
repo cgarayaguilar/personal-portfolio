@@ -15,16 +15,6 @@ export const Modal = () => {
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
 
-  const handleSubmit = event => {
-    //event.preventDefault()
-
-    console.table({
-      name,
-      email,
-      message
-    })
-  }
-
   if (isModalVisible)
     return ReactDOM.createPortal(
       <ThemeProvider theme={themeMUI}>
@@ -43,10 +33,9 @@ export const Modal = () => {
               variant='body'
             />
             <form
-              action={`mailto:cgaray.aguilar97@gmail.com?subject=Mensaje%20enviado%20desde%20mi%20web%20personal&body=${message}`}
-              onSubmit={handleSubmit}
+              action={`mailto:cgaray.aguilar97@gmail.com?subject=Contacto%20desde%20web%20personal`}
               method='post'
-              enctype='text/plain'
+              encType='text/plain'
             >
               <InputsContainer>
                 <TextField

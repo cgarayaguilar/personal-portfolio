@@ -18,16 +18,32 @@ export const AppBar = () => {
     windowWidth > 768 ? setShowMenu(true) : setShowMenu(false)
   }, [windowWidth])
 
+  const handleClick = () => {
+    windowWidth < 768 && setShowMenu(false)
+  }
+
   return (
     <Container id='home'>
       <img src={logo} alt='Logo' />
 
       <Overlay visible={showMenu} theme={theme}>
         <NavBar theme={theme}>
-          <a href='#home'>Inicio</a>
-          <a href='#about'>Sobre mi</a>
-          <a href='#projects'>Proyectos</a>
-          <a href='#home' onClick={openModal}>
+          <a href='#home' onClick={handleClick}>
+            Inicio
+          </a>
+          <a href='#about' onClick={handleClick}>
+            Sobre mi
+          </a>
+          <a href='#projects' onClick={handleClick}>
+            Proyectos
+          </a>
+          <a
+            href='#home'
+            onClick={() => {
+              handleClick()
+              openModal()
+            }}
+          >
             Contactame
           </a>
         </NavBar>
